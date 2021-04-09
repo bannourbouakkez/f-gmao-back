@@ -19,6 +19,9 @@ use App\Model\Achat\secteur;
 use App\Model\Magasin\art_type;
 use App\Model\Magasin\art_utilisation;
 use App\Model\Equipement\equi_niveau;
+use App\Model\Equipement\equi_equipement;
+
+
 
 
 
@@ -170,6 +173,10 @@ class RemplirController extends Controller
         equi_niveau::create(['niveau'=>3,'nom'=>'Equipement','isMin'=>1,'isMax'=>0,'exist'=>1]);
         equi_niveau::create(['niveau'=>4,'nom'=>'SousEquipemnt','isMin'=>0,'isMax'=>1,'exist'=>1]);
 
+
+        equi_equipement::create(['BG'=>1,'BD'=>2,'Niv'=>0,'niveau_id'=>1,'equipement'=>'Arbre Equipement','exist'=>1]);
+
+        
 
       
 
