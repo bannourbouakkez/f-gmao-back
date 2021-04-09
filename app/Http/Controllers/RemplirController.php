@@ -38,18 +38,18 @@ class RemplirController extends Controller
 
     public function remplir(){
         
-        art_famille::insert(['FamilleID'=>0,'famille'=>'Aucune']);
+        art_famille::create(['famille'=>'Aucune']);
         art_famille::where('FamilleID','=',1)->update(['FamilleID'=>0]);
 
 
-        art_fam_cara::insert(['FamCaraID'=>0,'name_famille'=>'Aucune','famille_id'=>0,'hasCara'=>0]);
+        art_fam_cara::create(['name_famille'=>'Aucune','famille_id'=>0,'hasCara'=>0]);
         art_fam_cara::where('FamCaraID','=',1)->update(['FamCaraID'=>0]);
 
 
-        art_fam_cara_det::insert(['FamCaraDetID'=>0,'name'=>'aucune','label'=>'aucune','fam_cara_id'=>0,'required'=>0,'type'=>'aucune','input'=>'aucune']);
+        art_fam_cara_det::create(['name'=>'aucune','label'=>'aucune','fam_cara_id'=>0,'required'=>0,'type'=>'aucune','input'=>'aucune']);
         art_fam_cara_det::where('FamCaraDetID','=',1)->update(['FamCaraDetID'=>0]);
         
-        art_emplacement::insert(['EmplacementID'=>0,'emplacement'=>'Aucune']);
+        art_emplacement::create(['emplacement'=>'Aucune']);
         art_emplacement::where('EmplacementID','=',1)->update(['EmplacementID'=>0]);
         
 
