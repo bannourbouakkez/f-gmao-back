@@ -20,6 +20,7 @@ use App\Model\Magasin\art_type;
 use App\Model\Magasin\art_utilisation;
 use App\Model\Equipement\equi_niveau;
 use App\Model\Equipement\equi_equipement;
+use App\Model\Achat\fournisseur;
 
 
 
@@ -41,6 +42,17 @@ class RemplirController extends Controller
         art_famille::create(['famille'=>'Aucune']);
         art_famille::where('FamilleID','=',1)->update(['FamilleID'=>0]);
 
+        art_famille::create(['famille'=>'Moteur']);
+        art_famille::create(['famille'=>'Filtre']);
+        art_famille::create(['famille'=>'Compresseur']);
+        art_famille::create(['famille'=>'Thermostat']);
+        art_famille::create(['famille'=>'Batterie']);
+
+        fournisseur::create(['nom'=>'Mohammed Ben Frej',"livmode_id"=>1,'secteur_id'=>1,'dossier_id'=>1,'ref'=>1,'TVA'=>18,'tel1'=>1111111]);
+        fournisseur::create(['nom'=>'Amir Haj Ahmed',"livmode_id"=>2,'secteur_id'=>2,'dossier_id'=>1,'ref'=>2,'TVA'=>18,'tel1'=>22222222]);
+        fournisseur::create(['nom'=>'ALi Doss',"livmode_id"=>2,'secteur_id'=>1,'dossier_id'=>1,'ref'=>3,'TVA'=>25,'tel1'=>33333333]);
+        fournisseur::create(['nom'=>'Foued Mabrouk',"livmode_id"=>1,'secteur_id'=>2,'dossier_id'=>1,'ref'=>4,'TVA'=>10,'tel1'=>44444444]);
+        fournisseur::create(['nom'=>'Sami Salah',"livmode_id"=>1,'secteur_id'=>1,'dossier_id'=>1,'ref'=>5,'TVA'=>18,'tel1'=>55555555]);
 
         art_fam_cara::create(['name_famille'=>'Aucune','famille_id'=>0,'hasCara'=>0]);
         art_fam_cara::where('FamCaraID','=',1)->update(['FamCaraID'=>0]);
@@ -70,6 +82,7 @@ class RemplirController extends Controller
         post::create(['post'=>'ChefDeEquipe','fonction'=>'ChefDeEquipe','des'=>'ChefDeEquipe']);
         post::create(['post'=>'ChefDePoste','fonction'=>'ChefDePoste','des'=>'ChefDePoste']);
         post::create(['post'=>'ResponsableMaintenance','fonction'=>'ResponsableMaintenance','des'=>'ResponsableMaintenance']);
+        
         // post::insert(['PostID'=>1,'post'=>'Admin','fonction'=>'Administrateur','des'=>'Administrateur']);
         // post::insert(['PostID'=>2,'post'=>'ResponsableAchat','fonction'=>'Responsable Achat','des'=>'Responsable Achat']);
         // post::insert(['PostID'=>3,'post'=>'ResponsableMagasin','fonction'=>'Responsable Magasin','des'=>'Responsable Magasin']);
