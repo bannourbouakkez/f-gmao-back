@@ -21,7 +21,7 @@ use App\Model\Magasin\art_utilisation;
 use App\Model\Equipement\equi_niveau;
 use App\Model\Equipement\equi_equipement;
 use App\Model\Achat\fournisseur;
-
+use App\Model\Achat\livmode;
 
 
 
@@ -42,6 +42,18 @@ class RemplirController extends Controller
         art_famille::create(['famille'=>'Aucune']);
         art_famille::where('FamilleID','=',1)->update(['FamilleID'=>0]);
 
+        livmode::create(['mode'=>'Mode Paiement 1']);
+        livmode::create(['mode'=>'Mode Paiement 2']);
+        livmode::create(['mode'=>'Mode Paiement 3']);
+
+        art_secteur::create(['secteur'=>'Secteur1','exist'=>1]);
+        art_secteur::create(['secteur'=>'Secteur2','exist'=>1]);
+        art_secteur::create(['secteur'=>'Secteur3','exist'=>1]);
+
+        secteur::create(['secteur'=>'Secteur1']);
+        secteur::create(['secteur'=>'Secteur2']);
+        secteur::create(['secteur'=>'Secteur3']);
+
         art_famille::create(['famille'=>'Moteur']);
         art_famille::create(['famille'=>'Filtre']);
         art_famille::create(['famille'=>'Compresseur']);
@@ -52,7 +64,7 @@ class RemplirController extends Controller
         fournisseur::create(['nom'=>'Amir Haj Ahmed',"livmode_id"=>2,'secteur_id'=>2,'dossier_id'=>1,'ref'=>2,'TVA'=>18,'tel1'=>22222222]);
         fournisseur::create(['nom'=>'ALi Doss',"livmode_id"=>2,'secteur_id'=>1,'dossier_id'=>1,'ref'=>3,'TVA'=>25,'tel1'=>33333333]);
         fournisseur::create(['nom'=>'Foued Mabrouk',"livmode_id"=>1,'secteur_id'=>2,'dossier_id'=>1,'ref'=>4,'TVA'=>10,'tel1'=>44444444]);
-        fournisseur::create(['nom'=>'Sami Salah',"livmode_id"=>1,'secteur_id'=>1,'dossier_id'=>1,'ref'=>5,'TVA'=>18,'tel1'=>55555555]);
+        fournisseur::create(['nom'=>'Sami Salah',"livmode_id"=>3,'secteur_id'=>3,'dossier_id'=>1,'ref'=>5,'TVA'=>18,'tel1'=>55555555]);
 
         art_fam_cara::create(['name_famille'=>'Aucune','famille_id'=>0,'hasCara'=>0]);
         art_fam_cara::where('FamCaraID','=',1)->update(['FamCaraID'=>0]);
@@ -163,13 +175,7 @@ class RemplirController extends Controller
         art_etat::create(['etat'=>'Moyen','exist'=>1]);
         art_etat::create(['etat'=>'Bien','exist'=>1]);
 
-        art_secteur::create(['secteur'=>'Secteur1','exist'=>1]);
-        art_secteur::create(['secteur'=>'Secteur2','exist'=>1]);
-        art_secteur::create(['secteur'=>'Secteur3','exist'=>1]);
-
-        secteur::create(['secteur'=>'Secteur1']);
-        secteur::create(['secteur'=>'Secteur2']);
-        secteur::create(['secteur'=>'Secteur3']);
+        
 
         art_type::create(['type'=>'Type1','exist'=>1]);
         art_type::create(['type'=>'Type2','exist'=>1]);
