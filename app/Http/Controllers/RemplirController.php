@@ -202,8 +202,8 @@ class RemplirController extends Controller
         
 
       
-
-        return response()->json(true);
+       $emplacements=art_emplacement::all();
+        return response()->json($emplacements);
 
 
     }
