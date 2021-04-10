@@ -20,13 +20,13 @@ class CreateArticlesTable extends Migration
             $table->Integer('famille_id')->unsigned();
             $table->Integer('sous_famille_id')->unsigned()->default(0);
             
-            $table->Integer('emplacement_id')->unsigned();
+            $table->Integer('emplacement_id')->unsigned()->default(0);
 
-            $table->Integer('imgs_dossier_id')->unsigned(); //----------
-            $table->Integer('fichiers_dossier_id')->unsigned(); //----------
+            $table->Integer('imgs_dossier_id')->unsigned()->default(1); //----------
+            $table->Integer('fichiers_dossier_id')->unsigned()->default(1); //----------
 
             $table->string('des',240);
-            $table->string('code_article',240);
+            $table->string('code_article',240)->nullable();
             $table->string('code_a_barre',240)->nullable();
             $table->float('PrixHT',10,4)->default(0);
 
@@ -35,7 +35,7 @@ class CreateArticlesTable extends Migration
             $table->float('stock_min',10,4)->default(0);
             $table->float('stock_max',10,4)->default(0);
             $table->float('stock_alert',10,4)->default(0);
-            $table->string('remarques',240);//----------
+            $table->string('remarques',240)->nullable();
 
 
             //$table->float('PrixTT',10,4)->default(0); // wallah ma ni 3aref chnowa
