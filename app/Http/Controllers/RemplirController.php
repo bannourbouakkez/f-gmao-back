@@ -41,7 +41,7 @@ class RemplirController extends Controller
         
         dossier::create(['nom'=>'DossierGenerale']);
 
-        
+
         art_famille::create(['famille'=>'Aucune']);
         art_famille::where('FamilleID','=',1)->update(['FamilleID'=>0]);
 
@@ -80,6 +80,8 @@ class RemplirController extends Controller
         art_emplacement::where('EmplacementID','=',1)->update(['EmplacementID'=>0]);
         
 
+        art_emplacement::create(['emplacement'=>'Aucune']);
+        art_emplacement::where('EmplacementID','=',1)->update(['EmplacementID'=>0]);
         art_emplacement::create(['emplacement'=>'Emp 1']);
         art_emplacement::create(['emplacement'=>'Emp 2']);
         art_emplacement::create(['emplacement'=>'Emp 3']);
