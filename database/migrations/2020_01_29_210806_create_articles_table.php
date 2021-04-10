@@ -49,7 +49,7 @@ class CreateArticlesTable extends Migration
             
             $table->foreign('emplacement_id')->references('EmplacementID')->on('art_emplacements');
             $table->foreign('imgs_dossier_id')->references('DossierID')->on('dossiers');
-            $table->foreign('fichiers_dossier_id')->references('FileID')->on('dossiers');
+            $table->foreign('fichiers_dossier_id')->references('DossierID')->on('dossiers');
 
         });
     }
