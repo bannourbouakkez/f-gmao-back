@@ -32,9 +32,9 @@ class CreateArticlesTable extends Migration
 
             $table->float('artTVA',10,4)->default(0); //----------
             $table->float('stock',10,4)->default(0);
-            $table->float('stock_min',10,4)->default(0);
-            $table->float('stock_max',10,4)->default(0);
-            $table->float('stock_alert',10,4)->default(0);
+            $table->float('stock_min',10,4)->nullable()->default(0);
+            $table->float('stock_max',10,4)->nullable()->default(0);
+            $table->float('stock_alert',10,4)->nullable()->default(0);
             $table->string('remarques',240)->nullable();
 
 
