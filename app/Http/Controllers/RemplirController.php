@@ -39,6 +39,9 @@ class RemplirController extends Controller
 
     public function remplir(){
         
+        dossier::create(['nom'=>'DossierGenerale']);
+
+        
         art_famille::create(['famille'=>'Aucune']);
         art_famille::where('FamilleID','=',1)->update(['FamilleID'=>0]);
 
@@ -84,7 +87,6 @@ class RemplirController extends Controller
         // art_emplacement::insert(['EmplacementID'=>2,'emplacement'=>'Emp 2']);
         // art_emplacement::insert(['EmplacementID'=>3,'emplacement'=>'Emp 3']);
 
-        dossier::create(['nom'=>'DossierGenerale']);
 
 
         post::create(['post'=>'Admin','fonction'=>'Administrateur','des'=>'Administrateur']);
