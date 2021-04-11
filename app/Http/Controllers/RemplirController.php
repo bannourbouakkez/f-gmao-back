@@ -63,11 +63,11 @@ class RemplirController extends Controller
         art_famille::create(['famille'=>'Thermostat']);
         art_famille::create(['famille'=>'Batterie']);
 
-        fournisseur::create(['nom'=>'Mohammed Ben Frej',"livmode_id"=>1,'secteur_id'=>1,'dossier_id'=>1,'ref'=>1,'TVA'=>18,'tel1'=>1111111]);
-        fournisseur::create(['nom'=>'Amir Haj Ahmed',"livmode_id"=>2,'secteur_id'=>2,'dossier_id'=>1,'ref'=>2,'TVA'=>18,'tel1'=>22222222]);
-        fournisseur::create(['nom'=>'ALi Doss',"livmode_id"=>2,'secteur_id'=>1,'dossier_id'=>1,'ref'=>3,'TVA'=>25,'tel1'=>33333333]);
-        fournisseur::create(['nom'=>'Foued Mabrouk',"livmode_id"=>1,'secteur_id'=>2,'dossier_id'=>1,'ref'=>4,'TVA'=>10,'tel1'=>44444444]);
-        fournisseur::create(['nom'=>'Sami Salah',"livmode_id"=>3,'secteur_id'=>3,'dossier_id'=>1,'ref'=>5,'TVA'=>18,'tel1'=>55555555]);
+        fournisseur::create(['nom'=>'Mohammed Ben Frej','livmode_id'=>1,'secteur_id'=>1,'dossier_id'=>1,'ref'=>1,'TVA'=>18,'tel1'=>1111111]);
+        fournisseur::create(['nom'=>'Amir Haj Ahmed','livmode_id'=>2,'secteur_id'=>2,'dossier_id'=>1,'ref'=>2,'TVA'=>18,'tel1'=>22222222]);
+        fournisseur::create(['nom'=>'ALi Doss','livmode_id'=>2,'secteur_id'=>1,'dossier_id'=>1,'ref'=>3,'TVA'=>25,'tel1'=>33333333]);
+        fournisseur::create(['nom'=>'Foued Mabrouk','livmode_id'=>1,'secteur_id'=>2,'dossier_id'=>1,'ref'=>4,'TVA'=>10,'tel1'=>44444444]);
+        fournisseur::create(['nom'=>'Sami Salah','livmode_id'=>3,'secteur_id'=>3,'dossier_id'=>1,'ref'=>5,'TVA'=>18,'tel1'=>55555555]);
 
         art_fam_cara::create(['name_famille'=>'Aucune','famille_id'=>0,'hasCara'=>0]);
         art_fam_cara::where('FamCaraID','=',1)->update(['FamCaraID'=>0]);
@@ -81,7 +81,7 @@ class RemplirController extends Controller
         
 
         art_emplacement::create(['emplacement'=>'Aucune']);
-        art_emplacement::where('EmplacementID','=',1)->update(['EmplacementID'=>0]);
+        //art_emplacement::where('EmplacementID','=',1)->update(['EmplacementID'=>0]);
         art_emplacement::create(['emplacement'=>'Emp 1']);
         art_emplacement::create(['emplacement'=>'Emp 2']);
         art_emplacement::create(['emplacement'=>'Emp 3']);
