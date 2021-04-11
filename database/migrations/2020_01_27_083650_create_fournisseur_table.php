@@ -56,4 +56,16 @@ class CreateFournisseurTable extends Migration
     {
         Schema::dropIfExists('fournisseurs');
     }
+
+    
+    public function __construct()
+    {
+        $this->setFillable();
+    }
+    public function setFillable()
+    {
+        $fields = Schema::getColumnListing('fournisseurs');
+
+        $this->fillable[] = $fields;
+    }
 }
