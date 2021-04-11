@@ -26,7 +26,7 @@ class NewDa extends Notification
     
     public function __construct(da $da,User $user)
     {
-        $this->user=$user;
+        $this->user=$user; 
         $this->da=$da;
     }
 

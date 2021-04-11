@@ -86,9 +86,9 @@ class daController extends Controller
         $da_obj=da::find($DaID);
 
         if($da_obj->delai==1){
-          $user_tn->notify(new Alerte());
+          //$user_tn->notify(new Alerte());
         }else{
-          $user_tn->notify(new NewDa($da_obj,$user_a));
+          //$user_tn->notify(new NewDa($da_obj,$user_a));
         }
         
         $retourRart=rart::create([

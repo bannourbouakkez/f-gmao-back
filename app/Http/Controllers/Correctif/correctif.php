@@ -2220,11 +2220,14 @@ class correctif extends Controller
         $di_obj=di_di::find($DiID);
         $ot_obj=di_ot::find($ot['ot']->OtID);
 
-        $user_tn=User::find($di_di_plan->user_id); $user_tn->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); array_push($arr_ids_notified,$user_tn->id);
+        $user_tn=User::find($di_di_plan->user_id); 
+        //$user_tn->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); 
+        array_push($arr_ids_notified,$user_tn->id);
         if($di_di_plan->modifieur_user_id){
           $user_tn2=User::find($di_di_plan->modifieur_user_id); 
           if(!in_array($$user_tn2->id,$arr_ids_notified)){
-          $user_tn2->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); array_push($arr_ids_notified,$user_tn2->id);
+          //$user_tn2->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); 
+          array_push($arr_ids_notified,$user_tn2->id);
           }
         }
 
@@ -2233,13 +2236,16 @@ class correctif extends Controller
         $user_r_di_id=$di_obj->recepteur_user_id; $user_r_di_tn=User::find($user_r_di_id);
        
         if(!in_array($user_c_di_id,$arr_ids_notified)){
-          $user_c_di_tn->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); array_push($arr_ids_notified,$user_c_di_id);
+          //$user_c_di_tn->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); 
+          array_push($arr_ids_notified,$user_c_di_id);
         }
         if(!in_array($user_d_di_id,$arr_ids_notified)){
-          $user_d_di_tn->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); array_push($arr_ids_notified,$user_d_di_id);
+          //$user_d_di_tn->notify(new NewAutoDiExecuted($di_obj,$ot_obj));
+           array_push($arr_ids_notified,$user_d_di_id);
         }
         if(!in_array($user_r_di_id,$arr_ids_notified)){
-          $user_r_di_tn->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); array_push($arr_ids_notified,$user_r_di_id);
+          //$user_r_di_tn->notify(new NewAutoDiExecuted($di_obj,$ot_obj)); 
+          array_push($arr_ids_notified,$user_r_di_id);
         }
     }
 
