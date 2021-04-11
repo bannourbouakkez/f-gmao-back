@@ -45,9 +45,9 @@ class RemplirController extends Controller
         art_famille::create(['famille'=>'Aucune']);
         art_famille::where('FamilleID','=',1)->update(['FamilleID'=>0]);
 
-        livmode::create(['mode'=>'Mode Paiement 1']);
-        livmode::create(['mode'=>'Mode Paiement 2']);
-        livmode::create(['mode'=>'Mode Paiement 3']);
+        $livemodeid1=livmode::create(['mode'=>'Mode Paiement 1'])->id;
+        $livemodeid2=livmode::create(['mode'=>'Mode Paiement 2'])->id;
+        $livemodeid3=livmode::create(['mode'=>'Mode Paiement 3'])->id;
 
         art_secteur::create(['secteur'=>'Secteur1','exist'=>1]);
         art_secteur::create(['secteur'=>'Secteur2','exist'=>1]);
@@ -63,14 +63,14 @@ class RemplirController extends Controller
         art_famille::create(['famille'=>'Thermostat']);
         art_famille::create(['famille'=>'Batterie']);
 
-        $emplacements=livmode::all();
-        return response()->json($emplacements);
+        // $emplacements=livmode::all();
+        // return response()->json($emplacements);
 
-        fournisseur::create(['nom'=>'Mohammed Ben Frej','livmode_id'=>1,'secteur_id'=>1,'dossier_id'=>1,'ref'=>1,'TVA'=>18,'tel1'=>1111111]);
-        fournisseur::create(['nom'=>'Amir Haj Ahmed','livmode_id'=>2,'secteur_id'=>2,'dossier_id'=>1,'ref'=>2,'TVA'=>18,'tel1'=>22222222]);
-        fournisseur::create(['nom'=>'ALi Doss','livmode_id'=>2,'secteur_id'=>1,'dossier_id'=>1,'ref'=>3,'TVA'=>25,'tel1'=>33333333]);
-        fournisseur::create(['nom'=>'Foued Mabrouk','livmode_id'=>1,'secteur_id'=>2,'dossier_id'=>1,'ref'=>4,'TVA'=>10,'tel1'=>44444444]);
-        fournisseur::create(['nom'=>'Sami Salah','livmode_id'=>3,'secteur_id'=>3,'dossier_id'=>1,'ref'=>5,'TVA'=>18,'tel1'=>55555555]);
+        fournisseur::create(['nom'=>'Mohammed Ben Frej','livmode_id'=>$livemodeid1,'secteur_id'=>1,'dossier_id'=>1,'ref'=>1,'TVA'=>18,'tel1'=>1111111]);
+        fournisseur::create(['nom'=>'Amir Haj Ahmed','livmode_id'=>$livemodeid2,'secteur_id'=>2,'dossier_id'=>1,'ref'=>2,'TVA'=>18,'tel1'=>22222222]);
+        fournisseur::create(['nom'=>'ALi Doss','livmode_id'=>$livemodeid2,'secteur_id'=>1,'dossier_id'=>1,'ref'=>3,'TVA'=>25,'tel1'=>33333333]);
+        fournisseur::create(['nom'=>'Foued Mabrouk','livmode_id'=>$livemodeid1,'secteur_id'=>2,'dossier_id'=>1,'ref'=>4,'TVA'=>10,'tel1'=>44444444]);
+        fournisseur::create(['nom'=>'Sami Salah','livmode_id'=>$livemodeid3,'secteur_id'=>3,'dossier_id'=>1,'ref'=>5,'TVA'=>18,'tel1'=>55555555]);
 
         art_fam_cara::create(['name_famille'=>'Aucune','famille_id'=>0,'hasCara'=>0]);
         art_fam_cara::where('FamCaraID','=',1)->update(['FamCaraID'=>0]);
