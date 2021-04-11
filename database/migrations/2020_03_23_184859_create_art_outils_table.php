@@ -47,7 +47,7 @@ class CreateArtOutilsTable extends Migration
             //$table->foreign('outil_utilisations_id')->references('OutilUtilisationsID')->on('art_outil_utilisations');
 
             $table->foreign('imgs_dossier_id')->references('DossierID')->on('dossiers');
-            $table->foreign('fichiers_dossier_id')->references('FileID')->on('files');
+            $table->foreign('fichiers_dossier_id')->references('DossierID')->on('dossiers');
 
         });
     }
