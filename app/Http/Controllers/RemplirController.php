@@ -122,7 +122,7 @@ class RemplirController extends Controller
         // unite::insert(['UniteID'=>5,'unite'=>'V²','TypeUnite'=>'integer','exist'=>1]);
 
         $UserID1=User::create(['name'=>'ResponsableAchat1','prename'=>'ResponsableAchat1','age'=>33,
-        'email'=>'ResponsableAchat1@ResponsableAchat1.com','password'=>bcrypt('ResponsableAchat1'),'poste'=>'ResponsableAchat1'])->id;
+        'email'=>'ResponsableAchat1@ResponsableAchat1.com','password'=>bcrypt('ResponsableAchat1'),'poste'=>'ResponsableAchat'])->id;
         
         $UserID2=User::create(['name'=>'Admin','prename'=>'Admin','age'=>33,
         'email'=>'Admin@Admin.com','password'=>bcrypt('Admin'),'poste'=>'admin'])->id;
@@ -131,35 +131,35 @@ class RemplirController extends Controller
         'email'=>'rien@rien.com','password'=>bcrypt('rien'),'poste'=>'rien'])->id;
 
         $UserID4=User::create(['name'=>'ResponsableAchat2','prename'=>'ResponsableAchat2','age'=>33,
-        'email'=>'ResponsableAchat2@ResponsableAchat2.com','password'=>bcrypt('ResponsableAchat2'),'poste'=>'ResponsableAchat2'])->id;
+        'email'=>'ResponsableAchat2@ResponsableAchat2.com','password'=>bcrypt('ResponsableAchat2'),'poste'=>'ResponsableAchat'])->id;
 
         $UserID5=User::create(['name'=>'ChefDeEquipe1','prename'=>'ChefDeEquipe1','age'=>33,
-        'email'=>'ChefDeEquipe1@ChefDeEquipe1.com','password'=>bcrypt('ChefDeEquipe1'),'poste'=>'ChefDeEquipe1'])->id;
+        'email'=>'ChefDeEquipe1@ChefDeEquipe1.com','password'=>bcrypt('ChefDeEquipe1'),'poste'=>'ChefDeEquipe'])->id;
 
         $UserID6=User::create(['name'=>'ChefDeEquipe2','prename'=>'ChefDeEquipe2','age'=>33,
-        'email'=>'ChefDeEquipe2@ChefDeEquipe2.com','password'=>bcrypt('ChefDeEquipe2'),'poste'=>'ChefDeEquipe2'])->id;
+        'email'=>'ChefDeEquipe2@ChefDeEquipe2.com','password'=>bcrypt('ChefDeEquipe2'),'poste'=>'ChefDeEquipe'])->id;
 
         $UserID7=User::create(['name'=>'ChefDePoste1','prename'=>'ChefDePoste1','age'=>33,
-        'email'=>'ChefDePoste1@ChefDePoste1.com','password'=>bcrypt('ChefDePoste1'),'poste'=>'ChefDePoste1'])->id;
+        'email'=>'ChefDePoste1@ChefDePoste1.com','password'=>bcrypt('ChefDePoste1'),'poste'=>'ChefDePoste'])->id;
 
         $UserID8=User::create(['name'=>'ChefDePoste2','prename'=>'ChefDePoste2','age'=>33,
-        'email'=>'ChefDePoste2@ChefDePoste2.com','password'=>bcrypt('ChefDePoste2'),'poste'=>'ChefDePoste2'])->id;
+        'email'=>'ChefDePoste2@ChefDePoste2.com','password'=>bcrypt('ChefDePoste2'),'poste'=>'ChefDePoste'])->id;
 
         $UserID9=User::create(['name'=>'ResponsableMaintenance1','prename'=>'ResponsableMaintenance1','age'=>33,
-        'email'=>'ResponsableMaintenance1@ResponsableMaintenance1.com','password'=>bcrypt('ResponsableMaintenance1'),'poste'=>'ResponsableMaintenance1'])->id;
+        'email'=>'ResponsableMaintenance1@ResponsableMaintenance1.com','password'=>bcrypt('ResponsableMaintenance1'),'poste'=>'ResponsableMaintenance'])->id;
 
         $UserID10=User::create(['name'=>'ResponsableMaintenance2','prename'=>'ResponsableMaintenance2','age'=>33,
-        'email'=>'ResponsableMaintenance2@ResponsableMaintenance2.com','password'=>bcrypt('ResponsableMaintenance2'),'poste'=>'ResponsableMaintenance2'])->id;
+        'email'=>'ResponsableMaintenance2@ResponsableMaintenance2.com','password'=>bcrypt('ResponsableMaintenance2'),'poste'=>'ResponsableMaintenance'])->id;
 
         $UserID11=User::create(['name'=>'ResponsableMethode','prename'=>'ResponsableMethode','age'=>33,
-        'email'=>'ResponsableMethode@ResponsableMethode.com','password'=>bcrypt('ResponsableMethode'),'poste'=>'ResponsableMethode'])->id;
+        'email'=>'ResponsableMethode@ResponsableMethode.com','password'=>bcrypt('ResponsableMethode'),'poste'=>'Methode'])->id;
 
 
         $UserID12=User::create(['name'=>'ResponsableMagasin1','prename'=>'ResponsableMagasin1','age'=>33,
-        'email'=>'ResponsableMagasin1@ResponsableMagasin1.com','password'=>bcrypt('ResponsableMagasin1'),'poste'=>'ResponsableMagasin1'])->id;
+        'email'=>'ResponsableMagasin1@ResponsableMagasin1.com','password'=>bcrypt('ResponsableMagasin1'),'poste'=>'ResponsableMagasin'])->id;
 
         $UserID13=User::create(['name'=>'ResponsableMagasin2','prename'=>'ResponsableMagasin2','age'=>33,
-        'email'=>'ResponsableMagasin2@ResponsableMagasin2.com','password'=>bcrypt('ResponsableMagasin2'),'poste'=>'ResponsableMagasin2'])->id;
+        'email'=>'ResponsableMagasin2@ResponsableMagasin2.com','password'=>bcrypt('ResponsableMagasin2'),'poste'=>'ResponsableMagasin'])->id;
 
 
 
