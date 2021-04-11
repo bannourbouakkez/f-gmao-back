@@ -199,7 +199,10 @@ class RemplirController extends Controller
         equi_niveau::create(['niveau'=>4,'nom'=>'SousEquipemnt','isMin'=>0,'isMax'=>1,'exist'=>1]);
 
 
-        equi_equipement::create(['BG'=>1,'BD'=>2,'Niv'=>0,'niveau_id'=>$NiveauID1,'equipement'=>'Arbre Equipement','exist'=>1]);
+        $EquipementID=equi_equipement::create(['BG'=>1,'BD'=>2,'Niv'=>0,'niveau_id'=>$NiveauID1,'equipement'=>'Arbre Equipement','exist'=>1])->EquipementID;
+        equi_equipement::where('EquipementID','=',$EquipementID)->update(['EquipementID'=>1]);
+        
+
 
         
 
