@@ -212,4 +212,44 @@ class RemplirController extends Controller
 
 
     }
+
+    public function getallequiepemnttest()
+  {
+
+    $equi_equipement = equi_equipement::all();
+    return response()->json($equi_equipement);
+
+
+  }
+
+  public function getChildstest(Request $request, $id)
+  {
+
+    $all = $request->input('all');
+    $isAll = true;
+    if ($all == '1' || $all == 1) {
+      $isAll = true;
+    }
+    if ($all == '0' || $all == 0) {
+      $isAll = false;
+    }
+    $isAll = true;
+
+    $equi_equipement = equi_equipement::where('EquipementID', '=', $id)->where('exist', '=', 1)->first();
+    $BG = $equi_equipement->BG;
+    $BD = $equi_equipement->BD;
+    $Niv = $equi_equipement->Niv;
+
+
+    if (!$isAll) {
+      $childs = equi_equipement::whereRaw('equi_equipements.BD - equi_equipements.BG = 1')
+        ->where('BG', '>', $BG)->where('BD', '<', $BD)->where('Niv', '=', $Niv + 1)->where('exist', '=', 1)->get();
+    } else {
+      $childs = equi_equipement::where('BG', '>', $BG)->where('BD', '<', $BD)->where('Niv', '=', $Niv + 1)->where('exist', '=', 1)->get();
+    }
+
+    return response()->json($childs);
+
+  }
+  
 }

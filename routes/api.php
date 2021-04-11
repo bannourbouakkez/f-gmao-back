@@ -20,6 +20,8 @@ Route::group([
     'prefix' => 'config'
 ], function ($router) {
     Route::get('remplir', 'RemplirController@remplir');
+    Route::get('getallequiepemnttest', 'RemplirController@getallequiepemnttest');
+    Route::get('getChildstest', 'RemplirController@getChildstest');
 });
 
 Route::group([

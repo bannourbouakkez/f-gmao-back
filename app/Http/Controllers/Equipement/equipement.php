@@ -184,6 +184,7 @@ class equipement extends Controller
   }
 
 
+  
   public function getChilds(Request $request, $id)
   {
 
