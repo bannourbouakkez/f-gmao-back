@@ -16,6 +16,7 @@ class CreateIntervenantsTable extends Migration
         Schema::create('intervenants', function (Blueprint $table) {
             $table->Increments('IntervenantID');
             $table->string('name',100);
+            $table->boolean('exist')->default(true);
             $table->timestamps();
         });
     }

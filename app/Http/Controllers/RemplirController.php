@@ -24,6 +24,7 @@ use App\Model\Achat\fournisseur;
 use App\Model\Achat\livmode;
 
 
+use App\Model\Divers\intervenant;
 
 
 
@@ -46,9 +47,9 @@ class RemplirController extends Controller
         $FamilleID=art_famille::create(['famille'=>'Aucune'])->FamilleID;
         art_famille::where('FamilleID','=',$FamilleID)->update(['FamilleID'=>0]);
 
-        $livemodeid1=livmode::create(['mode'=>'Mode Paiement 1'])->id;
-        $livemodeid2=livmode::create(['mode'=>'Mode Paiement 2'])->id;
-        $livemodeid3=livmode::create(['mode'=>'Mode Paiement 3'])->id;
+        $livemodeid1=livmode::create(['mode'=>'Mode Livraison 1'])->id;
+        $livemodeid2=livmode::create(['mode'=>'Mode Livraison 2'])->id;
+        $livemodeid3=livmode::create(['mode'=>'Mode Livraison 3'])->id;
 
         $SecteurID1=art_secteur::create(['secteur'=>'Secteur1','exist'=>1])->SecteurID;
         $SecteurID2=art_secteur::create(['secteur'=>'Secteur2','exist'=>1])->SecteurID;
@@ -90,7 +91,6 @@ class RemplirController extends Controller
         // art_emplacement::insert(['EmplacementID'=>1,'emplacement'=>'Emp 1']);
         // art_emplacement::insert(['EmplacementID'=>2,'emplacement'=>'Emp 2']);
         // art_emplacement::insert(['EmplacementID'=>3,'emplacement'=>'Emp 3']);
-
 
 
         $PostIDAdmin=post::create(['post'=>'Admin','fonction'=>'Administrateur','des'=>'Administrateur'])->PostID;
@@ -162,7 +162,6 @@ class RemplirController extends Controller
         'email'=>'ResponsableMagasin2@ResponsableMagasin2.com','password'=>bcrypt('ResponsableMagasin2'),'poste'=>'ResponsableMagasin'])->id;
 
 
-
         user_post::create(['user_id'=>$UserID2,'post_id'=>$PostIDAdmin]);
         user_post::create(['user_id'=>$UserID1,'post_id'=>$PostIDResponsableAchat]);
         user_post::create(['user_id'=>$UserID4,'post_id'=>$PostIDResponsableAchat]);
@@ -176,13 +175,10 @@ class RemplirController extends Controller
         user_post::create(['user_id'=>$UserID12,'post_id'=>$PostIDResponsableMagasin]);
         user_post::create(['user_id'=>$UserID13,'post_id'=>$PostIDResponsableMagasin]);
 
-        
         art_etat::create(['etat'=>'Faible','exist'=>1]);
         art_etat::create(['etat'=>'Moyen','exist'=>1]);
         art_etat::create(['etat'=>'Bien','exist'=>1]);
-
         
-
         art_type::create(['type'=>'Type1','exist'=>1]);
         art_type::create(['type'=>'Type2','exist'=>1]);
 
@@ -201,11 +197,36 @@ class RemplirController extends Controller
 
         $EquipementID=equi_equipement::create(['BG'=>1,'BD'=>2,'Niv'=>0,'niveau_id'=>$NiveauID1,'equipement'=>'Arbre Equipement','exist'=>1])->EquipementID;
         equi_equipement::where('EquipementID','=',$EquipementID)->update(['EquipementID'=>1]);
-        
 
 
-        
+        intervenant::create(['name'=>'Ouvrier 1 abc']);
+        intervenant::create(['name'=>'Ouvrier 2 def']);
+        intervenant::create(['name'=>'Ouvrier 3 ghi']);
+        intervenant::create(['name'=>'Ouvrier 4 jkl']);
+        intervenant::create(['name'=>'Ouvrier 5 mno']);
+        intervenant::create(['name'=>'Ouvrier 6 pqr']);
+        intervenant::create(['name'=>'Ouvrier 7 stw']);
+        intervenant::create(['name'=>'Ouvrier 8 xyz']);
 
+        intervenant::create(['name'=>'Technicien 1 abc']);
+        intervenant::create(['name'=>'Technicien 2 def']);
+        intervenant::create(['name'=>'Technicien 3 ghi']);
+        intervenant::create(['name'=>'Technicien 4 jkl']);
+        intervenant::create(['name'=>'Technicien 5 mno']);
+        intervenant::create(['name'=>'Technicien 6 pqr']);
+        intervenant::create(['name'=>'Technicien 7 stw']);
+        intervenant::create(['name'=>'Technicien 8 xyz']);
+
+        intervenant::create(['name'=>'Ingenieur 1 abc']);
+        intervenant::create(['name'=>'Ingenieur 2 def']);
+        intervenant::create(['name'=>'Ingenieur 3 ghi']);
+        intervenant::create(['name'=>'Ingenieur 4 jkl']);
+        intervenant::create(['name'=>'Ingenieur 5 mno']);
+        intervenant::create(['name'=>'Ingenieur 6 pqr']);
+        intervenant::create(['name'=>'Ingenieur 7 stw']);
+        intervenant::create(['name'=>'Ingenieur 8 xyz']);
+
+       
       
         // $emplacements=livmode::all();
         // return response()->json($emplacements);
