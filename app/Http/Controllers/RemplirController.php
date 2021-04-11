@@ -257,8 +257,8 @@ class RemplirController extends Controller
 
     $req = new Request();
     $req->setMethod('POST');
-    $req->request->add(['all' =>1]);
-    //$req->merge(['all' => 1]); // $req->request->add(['all' =>true]);
+    //$req->request->add(['all' =>1]);
+    $req->merge(['all' => 1]); // $req->request->add(['all' =>true]);
 
     $getChilds = $this->getChilds($req, $EquipementID);
     $childs = $getChilds->original;
@@ -277,8 +277,8 @@ class RemplirController extends Controller
       $arr = array();
       foreach ($childs as $child) {
         $req2 = new Request();
-        //$req2->merge(['all' => 1]); // $req->request->add(['all' =>true]);
-        $req->request->add(['all' =>1]);
+        $req2->merge(['all' => 1]); // $req->request->add(['all' =>true]);
+        //$req->request->add(['all' =>1]);
         $req2->setMethod('POST');
         $getChilds2 = $this->getChilds($req2, $child->EquipementID);
         $childs2 = $getChilds2->original;
