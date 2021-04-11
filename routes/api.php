@@ -21,7 +21,9 @@ Route::group([
 ], function ($router) {
     Route::get('remplir', 'RemplirController@remplir');
     Route::get('getallequiepemnttest', 'RemplirController@getallequiepemnttest');
-    Route::get('getChildstest', 'RemplirController@getChildstest');
+    Route::get('getChilds', 'RemplirController@getChilds');
+    Route::get('getNode/{EquipementID}', 'RemplirController@getNode');
+    
 });
 
 Route::group([

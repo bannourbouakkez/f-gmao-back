@@ -222,7 +222,7 @@ class RemplirController extends Controller
 
   }
 
-  public function getChildstest(Request $request, $id)
+  public function getChilds(Request $request, $id)
   {
 
     $all = $request->input('all');
@@ -251,5 +251,59 @@ class RemplirController extends Controller
     return response()->json($childs);
 
   }
-  
+
+  public function getNode($EquipementID)
+  { // No Loading // return all childs without this Node 
+
+    $req = new Request();
+    $req->merge(['all' => 1]); // $req->request->add(['all' =>true]);
+    $getChilds = $this->getChilds($req, $EquipementID);
+    $childs = $getChilds->original;
+
+
+    if (count($childs) == 0) {
+      //}else if( count($childs)==1 ){
+      $ret = equi_equipement::find($EquipementID);
+      $child = new \stdClass();
+      $child->id = $ret->EquipementID;
+      $child->name = $ret->equipement;
+      $child->depth = $ret->Niv;
+      $child->hasChildren = false;
+      return $child;
+    } else {
+      $arr = array();
+      foreach ($childs as $child) {
+        $req2 = new Request();
+        $req2->merge(['all' => 1]); // $req->request->add(['all' =>true]);
+        $getChilds2 = $this->getChilds($req2, $child->EquipementID);
+        $childs2 = $getChilds2->original;
+
+        if (count($childs2) == 0) {
+          array_push(
+            $arr,
+            [
+              'id' => $child->EquipementID,
+              'name' => $child->equipement,
+              'depth' => $child->Niv,
+              'hasChildren' => false
+            ]
+          );
+        } else {
+          array_push(
+            $arr,
+            [
+              'id' => $child->EquipementID,
+              'name' => $child->equipement,
+              'depth' => $child->Niv,
+              'hasChildren' => true,
+              'children' => $this->getNode($child->EquipementID)
+            ]
+          );
+        }
+      }
+      return $arr;
+    }
+  }
+
+
 }
