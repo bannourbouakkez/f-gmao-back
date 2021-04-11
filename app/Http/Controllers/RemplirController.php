@@ -63,6 +63,9 @@ class RemplirController extends Controller
         art_famille::create(['famille'=>'Thermostat']);
         art_famille::create(['famille'=>'Batterie']);
 
+        $emplacements=livmode::all();
+        return response()->json($emplacements);
+
         fournisseur::create(['nom'=>'Mohammed Ben Frej','livmode_id'=>1,'secteur_id'=>1,'dossier_id'=>1,'ref'=>1,'TVA'=>18,'tel1'=>1111111]);
         fournisseur::create(['nom'=>'Amir Haj Ahmed','livmode_id'=>2,'secteur_id'=>2,'dossier_id'=>1,'ref'=>2,'TVA'=>18,'tel1'=>22222222]);
         fournisseur::create(['nom'=>'ALi Doss','livmode_id'=>2,'secteur_id'=>1,'dossier_id'=>1,'ref'=>3,'TVA'=>25,'tel1'=>33333333]);
@@ -202,7 +205,7 @@ class RemplirController extends Controller
         
 
       
-       $emplacements=art_emplacement::all();
+        $emplacements=livmode::all();
         return response()->json($emplacements);
 
 
