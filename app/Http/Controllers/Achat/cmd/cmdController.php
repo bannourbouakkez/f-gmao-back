@@ -1216,8 +1216,8 @@ if($Qte!=0){
           $TypeID='BonID';
           $ID=$BonID;
           //='.$articleObj.')(
-          error::insert(['error'=>'1:addbon']);
-          error::insert(['error'=>'PUMP( $articleObj->ArticleID='.$articleObj->ArticleID.')($TypeID='.$TypeID.')($ID='.$ID.')($type='.$type.')($QteRecu='.$QteRecu.')($articleObj->PrixHT='.$articleObj->PrixHT.') )']);
+          //error::insert(['error'=>'1:addbon']);
+          //error::insert(['error'=>'PUMP( $articleObj->ArticleID='.$articleObj->ArticleID.')($TypeID='.$TypeID.')($ID='.$ID.')($type='.$type.')($QteRecu='.$QteRecu.')($articleObj->PrixHT='.$articleObj->PrixHT.') )']);
           
           $retPUMP=$this->PUMP($articleObj->ArticleID,$TypeID,$ID,$type,$QteRecu,$articleObj->PrixHT);
           if(!$retPUMP){$success=false;}
@@ -1309,9 +1309,9 @@ if($Qte!=0){
  // return $NvQte;//12345
 
     //='.$articleObj.')(
-    error::insert(['error'=>'2:PUMP']);
-    error::insert(['error'=>$art_pps]);
-    error::insert(['error'=>'CalculerPUMP ($art_pps , $NvQte='.$NvQte.') ($NvPrixHT='.$NvPrixHT.') ) ']);
+    // error::insert(['error'=>'2:PUMP']);
+    // error::insert(['error'=>$art_pps]);
+    // error::insert(['error'=>'CalculerPUMP ($art_pps , $NvQte='.$NvQte.') ($NvPrixHT='.$NvPrixHT.') ) ']);
 
   $retourPUMP=$this->CalculerPUMP($art_pps,$NvQte,$NvPrixHT);
  // return $retourPUMP;//12345

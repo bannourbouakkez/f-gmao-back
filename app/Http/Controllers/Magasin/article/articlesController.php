@@ -368,8 +368,8 @@ class articlesController extends Controller
       if ($FamCaraID != '0') {
         $createOrUpdate = 'create';
 
-        error::insert(['error'=>'1 = AddOrUpdateCaraArticle(FamCaraID:'.$FamCaraID.'['.gettype($FamCaraID).'], +cara_form:$cara_form,ArticleID:'.$ArticleID.',createOrUpdate:'.$createOrUpdate.')']);
-        error::insert(['error'=>"2 = ".json_encode($cara_form)]);
+        // error::insert(['error'=>'1 = AddOrUpdateCaraArticle(FamCaraID:'.$FamCaraID.'['.gettype($FamCaraID).'], +cara_form:$cara_form,ArticleID:'.$ArticleID.',createOrUpdate:'.$createOrUpdate.')']);
+        // error::insert(['error'=>"2 = ".json_encode($cara_form)]);
 
         $AddOrUpdateCaraArticle = $this->AddOrUpdateCaraArticle($FamCaraID, $cara_form, $ArticleID, $createOrUpdate);
         if (!$AddOrUpdateCaraArticle) {
@@ -629,17 +629,17 @@ class articlesController extends Controller
         }
         
         
-        error::insert(['error'=>'3 = i:'.$i.'['.
-              '(article_id=>'.$ArticleID.
-              ')(fam_cara_det_id=>'.$FamCaraDetID.
-              ')(cara_id=>'.$CaraID.
-              ')(isText=>'.$isText.
-              ')(text=>'.$text.
-              ')(isCheckbox=>'.$isCheckbox.
-              ')(checked=>'.$checked.
-              ')]'.
-              ' --- success='.$success.' | createOrUpdate='.$createOrUpdate
-              ]);
+        // error::insert(['error'=>'3 = i:'.$i.'['.
+        //       '(article_id=>'.$ArticleID.
+        //       ')(fam_cara_det_id=>'.$FamCaraDetID.
+        //       ')(cara_id=>'.$CaraID.
+        //       ')(isText=>'.$isText.
+        //       ')(text=>'.$text.
+        //       ')(isCheckbox=>'.$isCheckbox.
+        //       ')(checked=>'.$checked.
+        //       ')]'.
+        //       ' --- success='.$success.' | createOrUpdate='.$createOrUpdate
+        //       ]);
         
         
       

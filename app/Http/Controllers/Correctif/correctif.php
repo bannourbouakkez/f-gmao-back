@@ -3374,7 +3374,7 @@ BonIntervenantID	bon_id	intervenant_id	date1	time1	datetime1	date2	time2	datetim
        $value=$article->value;
        $di_bon_urp=di_bon_urp::where('bon_id','=',$BonID)->where('article_id','=',$article_id)->increment('qteu',$l_signe*$value); 
        
-       error::insert(['error'=>'BonID:'.$BonID.',article_id:'.$article_id.',signe:'.$signe.',l_signe:'.$l_signe.',value:'.$value]);
+       //error::insert(['error'=>'BonID:'.$BonID.',article_id:'.$article_id.',signe:'.$signe.',l_signe:'.$l_signe.',value:'.$value]);
 
 
        if(!$di_bon_urp){$success=false;}
