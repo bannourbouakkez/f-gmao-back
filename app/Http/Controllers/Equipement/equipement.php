@@ -189,7 +189,7 @@ class equipement extends Controller
 
 
     $all = $request->input('all');
-    $isAll = new Boolean();
+    $isAll = true;
     if ($all == '1' || $all == 1) {
       $isAll = true;
     }
