@@ -23,6 +23,8 @@ Route::group([
     Route::get('getallequiepemnttest', 'RemplirController@getallequiepemnttest');
     Route::get('getChilds', 'RemplirController@getChilds');
     Route::get('getNode/{EquipementID}', 'RemplirController@getNode');
+    Route::get('deletearticle/{ArticleID}', 'RemplirController@deletearticle');
+    
     
 });
 

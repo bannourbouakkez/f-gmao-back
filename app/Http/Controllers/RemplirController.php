@@ -25,6 +25,8 @@ use App\Model\Achat\livmode;
 
 
 use App\Model\Divers\intervenant;
+use App\Model\Magasin\article;
+
 
 
 
@@ -37,6 +39,11 @@ use App\Model\Divers\intervenant;
 class RemplirController extends Controller
 {
     //
+    
+    public function deletearticle($ArticleID){
+     article::where('ArticleID','=',$ArticleID)->delete();
+    }
+
 
     public function remplir(){
         
@@ -59,6 +66,7 @@ class RemplirController extends Controller
         secteur::create(['secteur'=>'Secteur2']);
         secteur::create(['secteur'=>'Secteur3']);
 
+        art_famille::create(['famille'=>'Aucune']);
         art_famille::create(['famille'=>'Moteur']);
         art_famille::create(['famille'=>'Filtre']);
         art_famille::create(['famille'=>'Compresseur']);
@@ -237,6 +245,9 @@ class RemplirController extends Controller
 
     }
 
+    
+
+    
     public function getallequiepemnttest()
   {
 
